@@ -171,9 +171,9 @@ p {
 
 /* ---------- Header ---------- */
 
+/* Header je iste navy boje kao pozadina logotipa. */
 .site-header {
-  background: #fff;
-  border-bottom: 1px solid var(--border);
+  background: var(--navy);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -205,7 +205,6 @@ p {
 .brand img {
   width: 40px;
   height: 40px;
-  border-radius: 6px;
 }
 
 .brand-text {
@@ -218,14 +217,14 @@ p {
   font-weight: 800;
   font-size: 1.25rem;
   letter-spacing: 0.08em;
-  color: var(--navy);
+  color: #e9ecf1; /* srebrna, kao slova na logotipu */
 }
 
 .brand-tag {
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--gold-dark);
+  color: var(--gold-light);
   font-weight: 600;
 }
 
@@ -246,15 +245,27 @@ p {
 .site-nav ul a {
   text-decoration: none;
   font-weight: 500;
-  color: var(--text);
+  color: #d5dae3;
   padding: 6px 0;
   border-bottom: 2px solid transparent;
 }
 
 .site-nav ul a:hover,
 .site-nav ul a[aria-current='page'] {
-  color: var(--navy);
+  color: #fff;
   border-bottom-color: var(--gold);
+}
+
+.header-phone {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  color: var(--navy);
+}
+
+.header-phone:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
 }
 
 .nav-toggle,
@@ -278,7 +289,7 @@ p {
     left: 0;
     width: 100%;
     height: 2px;
-    background: var(--navy);
+    background: #fff;
     content: '';
   }
 
@@ -300,8 +311,8 @@ p {
     top: 73px;
     left: 0;
     right: 0;
-    background: #fff;
-    border-bottom: 1px solid var(--border);
+    background: var(--navy);
+    border-bottom: 3px solid var(--gold);
     flex-direction: column;
     align-items: flex-start;
     padding: 16px 20px 20px;

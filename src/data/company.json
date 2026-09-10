@@ -1,0 +1,47 @@
+{
+  "brend": "PETROPAV",
+  "naziv": "PETROPAV D.O.O.",
+  "punNaziv": "Društvo sa ograničenom odgovornošću PETROPAV D.O.O.",
+  "domen": "petropav.rs",
+  "slogan": "Proizvodnja ambalaže i proizvoda od papira i kartona",
+  "tagline": "Quality you can trust",
+  "opis": "Mikro proizvodna firma iz Kragujevca, posluje od 2012. godine. Proizvodimo kartonske tacne, pek papir, aluminijumsku foliju i strec foliju za potrebe ugostiteljstva, prehrambene industrije i maloprodaje.",
+
+  "adresa": {
+    "ulica": "Solinska 21",
+    "postanskiBroj": "34000",
+    "grad": "Kragujevac",
+    "drzava": "Srbija",
+    "puna": "Solinska 21, 34000 Kragujevac, Srbija"
+  },
+
+  "kontakt": {
+    "telefon": "034 335 308",
+    "telefonHref": "tel:+38134335308",
+    "email": "petropav@gmail.com",
+    "emailHref": "mailto:petropav@gmail.com"
+  },
+
+  "rukovodstvo": {
+    "direktor": "Petar Cvijić",
+    "vlasnik": "Petar Cvijić"
+  },
+
+  "delatnost": {
+    "sifra": "1729",
+    "naziv": "Proizvodnja ostalih proizvoda od papira i kartona",
+    "velicina": "mikro preduzeće"
+  },
+
+  "poslujeOd": "2012",
+  "osnovano": "17.7.2012.",
+
+  "radnoVreme": [
+    { "dani": "Ponedeljak – Petak", "vreme": "08:00 – 16:00" },
+    { "dani": "Subota – Nedelja", "vreme": "Ne radimo" }
+  ],
+
+  "formspreEndpoint": "https://formspree.io/f/XXXXXXXX",
+
+  "napomena": "Bonitetna ocena i status blokade računa NISU deo ovog fajla namerno — to su promenljivi podaci i ne treba ih prikazivati kao trajnu činjenicu na sajtu."
+}

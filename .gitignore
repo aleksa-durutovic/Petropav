@@ -12,10 +12,7 @@ Thumbs.db
 .env.local
 *.local
 
-# Pravi podaci firme i brend — čuvaju se samo lokalno, ne objavljuju se
-src/data/company.json
-public/images/logo-*.png
-public/favicon.png
+# Izvorni fajlovi i interni dokumenti klijenta — ne objavljuju se
 design/
 CLIENT_CONTEXT.md
 
