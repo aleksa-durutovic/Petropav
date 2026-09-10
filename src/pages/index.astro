@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import company from '../config/company';
+import products from '../data/products.json';
+
+const godine = new Date().getFullYear() - Number(company.poslujeOd);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">{company.tagline}</p>
+      <h1>Ambalaža od papira, kartona i folije</h1>
+      <p class="lead">{company.opis}</p>
+      <div class="hero-actions">
+        <a href="/proizvodi" class="btn">Pogledajte proizvode</a>
+        <a href="/kontakt" class="btn btn-outline">Pošaljite upit</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Naš asortiman</h2>
+        <a href="/proizvodi" class="link-arrow">Svi proizvodi →</a>
+      </div>
+      <div class="product-grid">
+        {products.kategorije.map((k) => <ProductCard {...k} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container features">
+      <div>
+        <strong class="feature-num">{godine}+</strong>
+        <p>godina iskustva u proizvodnji (od {company.poslujeOd}.)</p>
+      </div>
+      <div>
+        <strong class="feature-num">B2B</strong>
+        <p>veleprodaja za ugostiteljstvo, pekare, mesare i markete</p>
+      </div>
+      <div>
+        <strong class="feature-num">Po meri</strong>
+        <p>dimenzije i količine prilagođene vašim potrebama</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta">
+      <h2>Potrebna vam je ponuda?</h2>
+      <p>Pošaljite upit sa okvirnim količinama i dimenzijama — odgovaramo u najkraćem roku.</p>
+      <a href="/kontakt" class="btn">Kontaktirajte nas</a>
+    </div>
+  </section>
+</BaseLayout>

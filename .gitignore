@@ -1,0 +1,36 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+
+# Env / secrets
+.env
+.env.local
+*.local
+
+# Pravi podaci firme i brend — čuvaju se samo lokalno, ne objavljuju se
+src/data/company.json
+public/images/logo-*.png
+public/favicon.png
+design/
+CLIENT_CONTEXT.md
+
+# Astro
+.astro/
+dist/
+
+# Dependencies / build output
+node_modules/
+build/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs
+*.log
+npm-debug.log*

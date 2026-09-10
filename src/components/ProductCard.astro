@@ -1,0 +1,21 @@
+---
+import ImagePlaceholder from './ImagePlaceholder.astro';
+
+interface Props {
+  slug: string;
+  naziv: string;
+  kratakOpis: string;
+  slika?: string | null;
+}
+
+const { slug, naziv, kratakOpis, slika } = Astro.props;
+---
+
+<a href={`/proizvodi/${slug}`} class="product-card">
+  <ImagePlaceholder src={slika} alt={naziv} />
+  <div class="product-card-body">
+    <h3>{naziv}</h3>
+    <p>{kratakOpis}</p>
+    <span class="link-arrow">Detalji proizvoda →</span>
+  </div>
+</a>

@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InquiryForm from '../components/InquiryForm.astro';
+import company from '../config/company';
+
+const mapQuery = encodeURIComponent(company.adresa.puna);
+---
+
+<BaseLayout title="Kontakt" description={`Kontakt ${company.naziv} — ${company.adresa.puna}, tel. ${company.kontakt.telefon}.`}>
+  <section class="page-head">
+    <div class="container">
+      <h1>Kontakt</h1>
+      <p class="lead">Pošaljite upit za ponudu ili nas kontaktirajte telefonom i emailom.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div>
+        <h2>Pošaljite upit</h2>
+        <InquiryForm />
+      </div>
+
+      <aside class="info-box">
+        <h3>{company.naziv}</h3>
+        <dl>
+          <dt>Adresa</dt>
+          <dd>
+            {company.adresa.ulica}<br />
+            {company.adresa.postanskiBroj} {company.adresa.grad}, {company.adresa.drzava}<br />
+            <a href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`} target="_blank" rel="noopener">Prikaži na mapi →</a>
+          </dd>
+          <dt>Telefon</dt>
+          <dd><a href={company.kontakt.telefonHref}>{company.kontakt.telefon}</a></dd>
+          <dt>Email</dt>
+          <dd><a href={company.kontakt.emailHref}>{company.kontakt.email}</a></dd>
+          <dt>Radno vreme</dt>
+          <dd>
+            {company.radnoVreme.map((r) => <>{r.dani}: {r.vreme}<br /></>)}
+          </dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

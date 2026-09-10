@@ -1,0 +1,45 @@
+{
+  "brend": "FIRMA",
+  "naziv": "Naziv Firme D.O.O.",
+  "punNaziv": "Društvo sa ograničenom odgovornošću Naziv Firme D.O.O.",
+  "domen": "example.com",
+  "slogan": "Proizvodnja ambalaže i proizvoda od papira i kartona",
+  "tagline": "Slogan firme",
+  "opis": "Kratak opis firme — ko ste, šta proizvodite i kome prodajete.",
+
+  "adresa": {
+    "ulica": "Ulica i broj",
+    "postanskiBroj": "00000",
+    "grad": "Grad",
+    "drzava": "Srbija",
+    "puna": "Ulica i broj, 00000 Grad, Srbija"
+  },
+
+  "kontakt": {
+    "telefon": "000 000 000",
+    "telefonHref": "tel:+381000000000",
+    "email": "info@example.com",
+    "emailHref": "mailto:info@example.com"
+  },
+
+  "rukovodstvo": {
+    "direktor": "Ime Prezime",
+    "vlasnik": "Ime Prezime"
+  },
+
+  "delatnost": {
+    "sifra": "0000",
+    "naziv": "Naziv delatnosti",
+    "velicina": "mikro preduzeće"
+  },
+
+  "poslujeOd": "2000",
+  "osnovano": "1.1.2000.",
+
+  "radnoVreme": [
+    { "dani": "Ponedeljak – Petak", "vreme": "08:00 – 16:00" },
+    { "dani": "Subota – Nedelja", "vreme": "Ne radimo" }
+  ],
+
+  "formspreeEndpoint": "https://formspree.io/f/XXXXXXXX"
+}

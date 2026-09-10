@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import company from '../../config/company';
+import products from '../../data/products.json';
+
+const description = `${products.kategorije.map((k) => k.naziv).join(', ')} — veleprodaja, ${company.naziv}, ${company.adresa.grad}.`;
+---
+
+<BaseLayout title="Proizvodi" description={description}>
+  <section class="page-head">
+    <div class="container">
+      <h1>Proizvodi</h1>
+      <p class="lead">Kompletan asortiman ambalaže za prehrambenu industriju, ugostiteljstvo i logistiku. Cene i uslovi isporuke — na upit.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container product-grid">
+      {products.kategorije.map((k) => <ProductCard {...k} />)}
+    </div>
+  </section>
+</BaseLayout>

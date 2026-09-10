@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import company from '../config/company';
+import products from '../data/products.json';
+---
+
+<BaseLayout title="O nama" description={`${company.naziv} — proizvodnja ambalaže od papira i kartona, ${company.adresa.grad}, od ${company.poslujeOd}. godine.`}>
+  <section class="page-head">
+    <div class="container">
+      <h1>O nama</h1>
+      <p class="lead">{company.opis}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <h2>Ko smo</h2>
+        <p>
+          {company.naziv} je proizvodna firma sa sedištem u mestu {company.adresa.grad}, osnovana {company.osnovano}
+          Bavimo se delatnošću „{company.delatnost.naziv}” (šifra {company.delatnost.sifra}),
+          uz dopunski asortiman folija za pakovanje hrane i robe.
+        </p>
+        <p>
+          Radimo direktno sa kupcima — bez posrednika — što nam omogućava brzu komunikaciju,
+          fleksibilne količine i proizvode prilagođene konkretnim potrebama.
+        </p>
+
+        <h2>Šta proizvodimo</h2>
+        <ul class="check-list">
+          {products.kategorije.map((k) => <li><a href={`/proizvodi/${k.slug}`}>{k.naziv}</a></li>)}
+        </ul>
+      </div>
+
+      <aside class="info-box">
+        <h3>Podaci o firmi</h3>
+        <dl>
+          <dt>Poslovno ime</dt><dd>{company.punNaziv}</dd>
+          <dt>Sedište</dt><dd>{company.adresa.puna}</dd>
+          <dt>Delatnost</dt><dd>{company.delatnost.sifra} — {company.delatnost.naziv}</dd>
+          <dt>Direktor</dt><dd>{company.rukovodstvo.direktor}</dd>
+          <dt>Posluje od</dt><dd>{company.osnovano}</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

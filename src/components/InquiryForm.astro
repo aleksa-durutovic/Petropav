@@ -1,0 +1,69 @@
+---
+import company from '../config/company';
+import products from '../data/products.json';
+
+interface Props {
+  // Unapred izabran proizvod (npr. kada se forma prikazuje na strani proizvoda).
+  proizvod?: string;
+}
+
+const { proizvod } = Astro.props;
+---
+
+<form class="inquiry-form" action={company.formspreeEndpoint} method="POST">
+  <input type="hidden" name="_subject" value={`Upit sa sajta ${company.domen}`} />
+  <!-- Zamka za botove: ljudi ne vide ovo polje, botovi ga popune. -->
+  <input type="text" name="_gotcha" class="visually-hidden" tabindex="-1" autocomplete="off" />
+
+  <div class="form-row">
+    <label>
+      Ime i prezime *
+      <input type="text" name="ime" required autocomplete="name" />
+    </label>
+    <label>
+      Firma
+      <input type="text" name="firma" autocomplete="organization" />
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      Email *
+      <input type="email" name="email" required autocomplete="email" />
+    </label>
+    <label>
+      Telefon
+      <input type="tel" name="telefon" autocomplete="tel" />
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      Proizvod
+      <select name="proizvod">
+        <option value="">— Izaberite —</option>
+        {products.kategorije.map((k) => (
+          <option value={k.naziv} selected={k.naziv === proizvod}>{k.naziv}</option>
+        ))}
+        <option value="Ostalo">Ostalo / više proizvoda</option>
+      </select>
+    </label>
+    <label>
+      Okvirna količina
+      <input type="text" name="kolicina" placeholder="npr. 5.000 kom mesečno" />
+    </label>
+  </div>
+
+  <label>
+    Poruka *
+    <textarea name="poruka" rows="5" required placeholder="Dimenzije, specifikacije, rok isporuke..."></textarea>
+  </label>
+
+  <div class="form-actions">
+    <button type="submit" class="btn">Pošalji upit</button>
+    <p class="form-note">
+      Ili nas kontaktirajte direktno: <a href={company.kontakt.emailHref}>{company.kontakt.email}</a>
+      · <a href={company.kontakt.telefonHref}>{company.kontakt.telefon}</a>
+    </p>
+  </div>
+</form>

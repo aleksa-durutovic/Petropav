@@ -1,0 +1,50 @@
+---
+import company from '../config/company';
+import products from '../data/products.json';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <img src="/images/logo-full.png" alt={company.naziv} class="footer-logo" width="260" height="74" />
+      <p class="footer-desc">{company.slogan}.</p>
+    </div>
+
+    <div>
+      <h3>Proizvodi</h3>
+      <ul>
+        {products.kategorije.map((k) => (
+          <li><a href={`/proizvodi/${k.slug}`}>{k.naziv}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3>Kontakt</h3>
+      <ul>
+        <li>{company.adresa.ulica}</li>
+        <li>{company.adresa.postanskiBroj} {company.adresa.grad}, {company.adresa.drzava}</li>
+        <li><a href={company.kontakt.telefonHref}>{company.kontakt.telefon}</a></li>
+        <li><a href={company.kontakt.emailHref}>{company.kontakt.email}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Podaci o firmi</h3>
+      <ul class="footer-legal">
+        <li>{company.punNaziv}</li>
+        <li>Šifra delatnosti: {company.delatnost.sifra} — {company.delatnost.naziv}</li>
+        <li>Direktor: {company.rukovodstvo.direktor}</li>
+        <li>Posluje od {company.osnovano}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      © {year} {company.naziv} · {company.domen}
+    </div>
+  </div>
+</footer>

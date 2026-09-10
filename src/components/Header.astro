@@ -1,0 +1,41 @@
+---
+import company from '../config/company';
+
+const links = [
+  { href: '/', label: 'Početna' },
+  { href: '/proizvodi', label: 'Proizvodi' },
+  { href: '/o-nama', label: 'O nama' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand" aria-label={`${company.naziv} — početna`}>
+      <img src="/images/logo-mark.png" alt="" width="40" height="40" />
+      <span class="brand-text">
+        <span class="brand-name">{company.brend}</span>
+        <span class="brand-tag">{company.tagline}</span>
+      </span>
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Meni">
+      <span></span>
+    </label>
+
+    <nav class="site-nav" aria-label="Glavna navigacija">
+      <ul>
+        {links.map((l) => (
+          <li>
+            <a href={l.href} aria-current={isActive(l.href) ? 'page' : undefined}>{l.label}</a>
+          </li>
+        ))}
+      </ul>
+      <a href={company.kontakt.telefonHref} class="btn btn-small header-phone">{company.kontakt.telefon}</a>
+    </nav>
+  </div>
+</header>

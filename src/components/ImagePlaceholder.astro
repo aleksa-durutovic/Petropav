@@ -1,0 +1,20 @@
+---
+// Prazno mesto za fotografiju proizvoda.
+// Kada slika postoji, postaviti putanju u products.json (polje "slika"),
+// npr. "/images/products/kartonske-tacne.jpg", i ona će se prikazati umesto okvira.
+interface Props {
+  src?: string | null;
+  alt: string;
+  ratio?: string;
+}
+
+const { src, alt, ratio = '4 / 3' } = Astro.props;
+---
+
+{src ? (
+  <img src={src} alt={alt} class="product-img" style={`aspect-ratio: ${ratio}`} loading="lazy" />
+) : (
+  <div class="img-placeholder" style={`aspect-ratio: ${ratio}`} role="img" aria-label={`${alt} — fotografija uskoro`}>
+    <span>Fotografija uskoro</span>
+  </div>
+)}

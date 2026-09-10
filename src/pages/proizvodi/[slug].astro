@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ImagePlaceholder from '../../components/ImagePlaceholder.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+import products from '../../data/products.json';
+
+export function getStaticPaths() {
+  return products.kategorije.map((k) => ({ params: { slug: k.slug }, props: { proizvod: k } }));
+}
+
+const { proizvod: p } = Astro.props;
+const ostali = products.kategorije.filter((k) => k.slug !== p.slug);
+---
+
+<BaseLayout title={p.naziv} description={p.kratakOpis}>
+  <section class="section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Putanja">
+        <a href="/">Početna</a> / <a href="/proizvodi">Proizvodi</a> / <span>{p.naziv}</span>
+      </nav>
+
+      <div class="product-detail">
+        <ImagePlaceholder src={p.slika} alt={p.naziv} />
+
+        <div>
+          <h1>{p.naziv}</h1>
+          <p class="lead">{p.opis}</p>
+
+          <h2 class="h3">Primena</h2>
+          <ul class="tag-list">
+            {p.primene.map((x) => <li>{x}</li>)}
+          </ul>
+
+          <a href="#upit" class="btn">Zatražite ponudu</a>
+        </div>
+      </div>
+
+      <h2 class="h3 spec-title">Specifikacije</h2>
+      <div class="table-wrap">
+        <table class="spec-table">
+          <tbody>
+            {p.specifikacije.map((s) => (
+              <tr><th scope="row">{s.naziv}</th><td>{s.vrednost}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="upit">
+    <div class="container narrow">
+      <h2>Upit za: {p.naziv}</h2>
+      <p>Navedite dimenzije, količinu i željeni rok isporuke — pripremićemo ponudu.</p>
+      <InquiryForm proizvod={p.naziv} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="h3">Ostali proizvodi</h2>
+      <ul class="other-products">
+        {ostali.map((k) => <li><a href={`/proizvodi/${k.slug}`}>{k.naziv} →</a></li>)}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

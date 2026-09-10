@@ -1,0 +1,64 @@
+{
+  "kategorije": [
+    {
+      "slug": "kartonske-tacne",
+      "naziv": "Kartonske tacne",
+      "kratakOpis": "Tacne od prehrambenog kartona za meso, pecivo, voće i povrće, gotova jela i posluženje.",
+      "opis": "Kartonske tacne izrađene od kartona pogodnog za kontakt sa hranom. Koriste se u mesarama, pekarama, marketima i ugostiteljstvu za pakovanje i izlaganje proizvoda. Dostupne u više dimenzija i nosivosti, sa mogućnošću kaširanja i lakiranja.",
+      "primene": ["Mesare i marketi", "Pekare i poslastičarnice", "Voće i povrće", "Catering i dostava hrane"],
+      "specifikacije": [
+        { "naziv": "Materijal", "vrednost": "Prehrambeni karton (GC / GT)" },
+        { "naziv": "Standardne dimenzije", "vrednost": "Po dogovoru — više formata" },
+        { "naziv": "Boja", "vrednost": "Bela ili natron (kraft)" },
+        { "naziv": "Pakovanje", "vrednost": "U kartonskim transportnim kutijama" },
+        { "naziv": "Minimalna količina", "vrednost": "Na upit (veleprodaja)" }
+      ],
+      "slika": null
+    },
+    {
+      "slug": "pek-papir",
+      "naziv": "Pek papir",
+      "kratakOpis": "Papir za pečenje otporan na masnoću i visoke temperature, u tabacima i rolnama.",
+      "opis": "Pek (pergament) papir sa silikonskim premazom, otporan na masnoću i temperaturu do ~220 °C. Namenjen pekarama, poslastičarnicama i profesionalnim kuhinjama za oblaganje plehova i pakovanje pekarskih proizvoda. Isporučuje se u rolnama i kao sečeni tabaci.",
+      "primene": ["Pekare i pekarski plehovi", "Poslastičarnice", "Profesionalne kuhinje", "Pakovanje toplih proizvoda"],
+      "specifikacije": [
+        { "naziv": "Vrsta", "vrednost": "Pergament sa silikonskim premazom" },
+        { "naziv": "Temperaturna otpornost", "vrednost": "do ~220 °C" },
+        { "naziv": "Format", "vrednost": "Rolne i sečeni tabaci (dimenzije na upit)" },
+        { "naziv": "Gramatura", "vrednost": "Standardno 38–45 g/m² (na upit)" },
+        { "naziv": "Minimalna količina", "vrednost": "Na upit (veleprodaja)" }
+      ],
+      "slika": null
+    },
+    {
+      "slug": "aluminijumska-folija",
+      "naziv": "Aluminijumska folija",
+      "kratakOpis": "Folija za pakovanje, čuvanje i pečenje hrane — kućna i ugostiteljska pakovanja.",
+      "opis": "Aluminijumska folija za pakovanje i termičku obradu hrane. Pogodna za zamrzavanje, pečenje i transport toplih obroka. Dostupna u rolnama različitih dužina i debljina, kao i u kaširanim varijantama za catering.",
+      "primene": ["Ugostiteljstvo i catering", "Prehrambena industrija", "Dostava toplih obroka", "Domaćinstvo"],
+      "specifikacije": [
+        { "naziv": "Materijal", "vrednost": "Aluminijum (Al 99%+)" },
+        { "naziv": "Debljina", "vrednost": "Standardno 9–15 µm (na upit)" },
+        { "naziv": "Širina rolne", "vrednost": "Po dogovoru" },
+        { "naziv": "Namena", "vrednost": "Kontakt sa hranom, pečenje, zamrzavanje" },
+        { "naziv": "Minimalna količina", "vrednost": "Na upit (veleprodaja)" }
+      ],
+      "slika": null
+    },
+    {
+      "slug": "strec-folija",
+      "naziv": "Strec folija",
+      "kratakOpis": "Prijanjajuća (stretch) folija za paletno pakovanje i zaštitu robe u transportu.",
+      "opis": "Strec (stretch) folija za ručno i mašinsko paletno pakovanje. Obezbeđuje stabilnost tovara, zaštitu od prašine i vlage. Dostupna u više debljina i sa različitim stepenom rastegljivosti, u transparentnoj i crnoj varijanti.",
+      "primene": ["Paletno pakovanje", "Skladištenje i logistika", "Zaštita robe u transportu", "Grupno pakovanje"],
+      "specifikacije": [
+        { "naziv": "Vrsta", "vrednost": "Ručna i mašinska rolna" },
+        { "naziv": "Debljina", "vrednost": "Standardno 15–23 µm (na upit)" },
+        { "naziv": "Boja", "vrednost": "Transparentna ili crna" },
+        { "naziv": "Težina rolne", "vrednost": "Po dogovoru (neto)" },
+        { "naziv": "Minimalna količina", "vrednost": "Na upit (veleprodaja)" }
+      ],
+      "slika": null
+    }
+  ]
+}
